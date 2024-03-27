@@ -10,6 +10,10 @@
     Número Digitado: 4 → Resposta: O número 4 está localizado no índice 2 do vetor.
 */
 package Busca_Binaria_Recursiva;
+
+import javax.swing.JOptionPane;
+
 public class Exercicio49 {
+
     
 }

@@ -10,6 +10,40 @@
     Caractere Digitado: a → Resposta: O caractere a está localizado no índice 8 do vetor.
 */
 package Busca_Linear_Recursiva;
+
+import javax.swing.JOptionPane;
+
 public class Exercicio40 {
-    
+    public static void main(String[] args) {
+        int tamanho = 10;
+        String vetor[] = new String[tamanho];
+        String nums, indice, K;
+
+        for (int i = 0; i < vetor.length; i++) {
+            nums = JOptionPane.showInputDialog("Digite a letra Nº" + (i + 1));
+            vetor[i] = nums;
+        }
+
+        K = JOptionPane.showInputDialog("Digite a letra que queira encontrar.");
+
+        indice = busca(vetor, 0, K);
+
+        if (!indice.equals(Integer.toString(vetor.length)))
+            JOptionPane.showMessageDialog(
+                null, 
+                "A letra " + K + " está localizado no índice " + indice + " do vetor."
+            );
+        else   
+            JOptionPane.showMessageDialog(
+                null, 
+                "A letra " + K + " não está localizado no vetor."
+            );
+    }
+
+    public static String busca(String vetor[], int I, String K) {
+        if ((I <= vetor.length - 1) && (!K.equals((vetor[I])))) {
+            return busca(vetor, I + 1, K);
+        }
+        return Integer.toString(I);
+    }
 }

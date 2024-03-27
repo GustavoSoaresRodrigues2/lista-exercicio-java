@@ -11,6 +11,45 @@
     Número Digitado: 4 → Resposta: O número 4 está localizado no índice 7 do vetor.
 */
 package Busca_Linear_Recursiva;
+import javax.swing.JOptionPane;
+
 public class Exercicio41 {
-    
+    public static void main(String[] args) {
+        int tamanho = 10;
+        double vetor[] = new double[tamanho];
+        double nums, K;
+        int indice;
+
+        for (int i = 0; i < vetor.length; i++) {
+            nums = Double.parseDouble(
+                JOptionPane.showInputDialog("Digite um número " + (i + 1))
+            );
+            vetor[i] = nums;
+        }
+
+        K = Double.parseDouble(
+            JOptionPane.showInputDialog("Digite o numero que queira encontrar.")
+        );
+
+        indice = busca(vetor, 0, K);
+
+        if (indice < vetor.length)
+            JOptionPane.showMessageDialog(
+                null, 
+                "O número " + K + " está localizado no índice " + indice + " do vetor."
+            );
+        else   
+            JOptionPane.showMessageDialog(
+                null, 
+                "O número " + K + " não está localizado no vetor."
+            );
+    }
+
+    public static int busca(double vetor[], int I, double K) {
+        if ((I <= vetor.length - 1) && (K != vetor[I])) {
+            return busca(vetor, I + 1, K);
+        }
+        return I;
+    }
 }
+
