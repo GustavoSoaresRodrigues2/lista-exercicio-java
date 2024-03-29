@@ -18,13 +18,12 @@ public class Exercicio39 {
     public static void main(String[] args) {
         int tamanho = 10;
         int vetor[] = new int[tamanho];
-        int nums, indice, K;
+        int indice, K;
 
         for (int i = 0; i < vetor.length; i++) {
-            nums = Integer.parseInt(
+            vetor[i] = Integer.parseInt(
                 JOptionPane.showInputDialog("Digite um número " + (i + 1))
             );
-            vetor[i] = nums;
         }
 
         K = Integer.parseInt(
