@@ -7,6 +7,18 @@
     anteriores da série: 1, 1, 2, 3, 5, 8, 13, 21, ..., ;
 */
 package Metodos_Recursividade;
+
 public class Exercicio22 {
-    
+
+    public static int calcularFibonacci(int numFibo) {
+
+        if (numFibo == 0) {
+            return 0;
+        } else if (numFibo == 1) {
+            return 1;
+        }
+
+        return calcularFibonacci(numFibo - 1) + calcularFibonacci(numFibo - 2);
+    }
+
 }
